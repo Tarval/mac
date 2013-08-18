@@ -55,6 +55,7 @@
       object:nil];
 }
 
+# pragma mark Preferences window events
 - (void) controlTextDidChange:(NSNotification *)notification
 {
     NSTextField *sender = notification.object;
@@ -88,6 +89,7 @@
     [websocketMC sendEvent:@"bindPin" data:send];
 }
 
+# pragma mark Websocket events
 - (void) websocketPinBound:(NSNotification *)notification
 {
     [loadingIndicator setHidden: YES];

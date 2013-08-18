@@ -22,5 +22,7 @@
 
 - (void)wsKeyDown: (NSNotification*)notification;
 - (void)wsKeyUp: (NSNotification*)notification;
+- (void)wsPhoneReady: (NSNotification*)notification;
+- (void)wsPhoneClose: (NSNotification*)notification;
 
 @end

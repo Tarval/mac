@@ -14,6 +14,10 @@
 		AA6D607F17ADF85B00BF8BDB /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AA6D607D17ADF85B00BF8BDB /* Credits.rtf */; };
 		AA6D608217ADF85B00BF8BDB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6D608117ADF85B00BF8BDB /* AppDelegate.m */; };
 		AA6D608517ADF85C00BF8BDB /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA6D608317ADF85C00BF8BDB /* MainMenu.xib */; };
+		AA846A8E17C159DA004D3511 /* controller_inactive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA846A8A17C159DA004D3511 /* controller_inactive@2x.png */; };
+		AA846A8F17C159DA004D3511 /* controller_inactive.png in Resources */ = {isa = PBXBuildFile; fileRef = AA846A8B17C159DA004D3511 /* controller_inactive.png */; };
+		AA846A9017C159DA004D3511 /* controller_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA846A8C17C159DA004D3511 /* controller_active@2x.png */; };
+		AA846A9117C159DA004D3511 /* controller_active.png in Resources */ = {isa = PBXBuildFile; fileRef = AA846A8D17C159DA004D3511 /* controller_active.png */; };
 		AAB41D1417AE090700601DB5 /* WebsocketMC.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB41D1317AE090700601DB5 /* WebsocketMC.m */; };
 		AAB41D1717AE093F00601DB5 /* TRConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB41D1617AE093F00601DB5 /* TRConstants.m */; };
 		AAF527ED17C0188400EB67DB /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF527EC17C0188400EB67DB /* PreferencesController.m */; };
@@ -36,6 +40,10 @@
 		AA6D608017ADF85B00BF8BDB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AA6D608117ADF85B00BF8BDB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		AA6D608417ADF85C00BF8BDB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		AA846A8A17C159DA004D3511 /* controller_inactive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "controller_inactive@2x.png"; sourceTree = "<group>"; };
+		AA846A8B17C159DA004D3511 /* controller_inactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = controller_inactive.png; sourceTree = "<group>"; };
+		AA846A8C17C159DA004D3511 /* controller_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "controller_active@2x.png"; sourceTree = "<group>"; };
+		AA846A8D17C159DA004D3511 /* controller_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = controller_active.png; sourceTree = "<group>"; };
 		AAB41D1217AE090700601DB5 /* WebsocketMC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebsocketMC.h; sourceTree = "<group>"; };
 		AAB41D1317AE090700601DB5 /* WebsocketMC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebsocketMC.m; sourceTree = "<group>"; };
 		AAB41D1517AE093F00601DB5 /* TRConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRConstants.h; sourceTree = "<group>"; };
@@ -146,6 +154,10 @@
 			isa = PBXGroup;
 			children = (
 				AAF527EF17C01D3400EB67DB /* check.png */,
+				AA846A8A17C159DA004D3511 /* controller_inactive@2x.png */,
+				AA846A8B17C159DA004D3511 /* controller_inactive.png */,
+				AA846A8C17C159DA004D3511 /* controller_active@2x.png */,
+				AA846A8D17C159DA004D3511 /* controller_active.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -207,6 +219,10 @@
 				AA6D607F17ADF85B00BF8BDB /* Credits.rtf in Resources */,
 				AA6D608517ADF85C00BF8BDB /* MainMenu.xib in Resources */,
 				AAF527F017C01D3400EB67DB /* check.png in Resources */,
+				AA846A8E17C159DA004D3511 /* controller_inactive@2x.png in Resources */,
+				AA846A8F17C159DA004D3511 /* controller_inactive.png in Resources */,
+				AA846A9017C159DA004D3511 /* controller_active@2x.png in Resources */,
+				AA846A9117C159DA004D3511 /* controller_active.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

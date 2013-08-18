@@ -30,21 +30,34 @@
 {
     // Add the status bar item
     self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
-    self.statusItem.title = @"T";
     self.statusItem.target = self;
     [self.statusItem setAction:@selector(clickStatusBar:)];
     
+    [self.statusItem setImage:[NSImage imageNamed:@"controller_inactive"]];
+    
     self.window.delegate = self;
     
-    // Set up listeners for keypresses
+    // Set up listeners
     NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+    
     [notificationCenter addObserver:self
       selector:@selector(wsKeyDown:)
       name:@"ws:keyDown"
       object:nil];
+    
     [notificationCenter addObserver:self
       selector:@selector(wsKeyUp:)
       name:@"ws:keyUp"
+      object:nil];
+    
+    [notificationCenter addObserver:self
+      selector:@selector(wsPhoneReady:)
+      name:@"ws:phoneReady"
+      object:nil];
+    
+    [notificationCenter addObserver:self
+      selector:@selector(wsPhoneClose:)
+      name:@"ws:phoneClose"
       object:nil];
 }
 
@@ -58,7 +71,15 @@
 # pragma mark Status bar
 - (void)clickStatusBar:(id)sender
 {
-    self.window.isVisible = !self.window.isVisible;
+    if(self.window.isVisible) {
+        self.window.isVisible = NO;
+    } else {
+        // TODO: Is all of this really needed?
+        [self.window makeKeyAndOrderFront:sender];
+        [self.window setOrderedIndex:0];
+        [NSApp activateIgnoringOtherApps:YES];
+        self.window.isVisible = YES;
+    }
 }
 
 #pragma mark Keystroke methods
@@ -109,4 +130,15 @@
     [self simulateKey:real withPressValue:YES];
 }
 
+- (void)wsPhoneReady:(NSNotification *)notification
+{
+    NSLog(@"Phone ready");
+    [self.statusItem setImage:[NSImage imageNamed:@"controller_active"]];
+}
+
+- (void)wsPhoneClose:(NSNotification *)notification
+{
+    NSLog(@"Phone closed");
+    [self.statusItem setImage:[NSImage imageNamed:@"controller_inactive"]];
+}
 @end

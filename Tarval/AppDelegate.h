@@ -9,16 +9,19 @@
 #import <Cocoa/Cocoa.h>
 #import "WebsocketMC.h"
 
-@interface AppDelegate : NSObject <NSApplicationDelegate, NSWindowDelegate>
+@interface AppDelegate : NSObject <NSApplicationDelegate, NSWindowDelegate> {
+    IBOutlet NSMenu *menu;
+}
 
 @property (assign) IBOutlet NSWindow *window;
 @property (strong, nonatomic) WebsocketMC *websocket;
 @property (strong, nonatomic) NSStatusItem *statusItem;
 
-- (void)clickStatusBar: (id)sender;
-
 - (void)simulateKey:(NSInteger)key withPressValue:(BOOL)val;
 - (NSInteger)translateKey: (NSNumber *)key;
+
+- (IBAction)clickPreferences: (id)sender;
+- (IBAction)clickQuit: (id)sender;
 
 - (void)wsKeyDown: (NSNotification*)notification;
 - (void)wsKeyUp: (NSNotification*)notification;

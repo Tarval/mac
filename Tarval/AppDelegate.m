@@ -30,10 +30,9 @@
 {
     // Add the status bar item
     self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
-    self.statusItem.target = self;
-    [self.statusItem setAction:@selector(clickStatusBar:)];
-    [self.statusItem setImage:[NSImage imageNamed:@"controller_inactive"]];
-    [self.statusItem setHighlightMode:YES];
+    self.statusItem.image = [NSImage imageNamed:@"controller_inactive"];
+    self.statusItem.menu = menu;
+    self.statusItem.highlightMode = YES;
     
     self.window.delegate = self;
     
@@ -68,8 +67,8 @@
     return NO;
 }
 
-# pragma mark Status bar
-- (void)clickStatusBar:(id)sender
+# pragma mark NSMenu events
+- (IBAction)clickPreferences:(id)sender
 {
     if(self.window.isVisible) {
         self.window.isVisible = NO;
@@ -80,6 +79,11 @@
         [NSApp activateIgnoringOtherApps:YES];
         self.window.isVisible = YES;
     }
+}
+
+- (IBAction)clickQuit:(id)sender
+{
+    [NSApp terminate: self];
 }
 
 #pragma mark Keystroke methods

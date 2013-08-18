@@ -15,17 +15,20 @@
     IBOutlet NSTextField *pinFieldOne;
     IBOutlet NSTextField *pinFieldTwo;
     IBOutlet NSTextField *pinFieldThree;
-    
     NSArray *pinFields;
     
     IBOutlet NSProgressIndicator *loadingIndicator;
     IBOutlet NSTextField *statusLabel;
     IBOutlet NSImageView *checkImage;
+    IBOutlet NSButton *repairButton;
     
     WebsocketMC *websocketMC;
 }
 
+
+- (IBAction)clickRepair: (id)sender;
 - (void)finishEnteringPin;
+
 - (void)websocketPinBound: (NSNotification*)notification;
 - (void)websocketOpened: (NSNotification*)notification;
 - (void)websocketClosed: (NSNotification*)notification;

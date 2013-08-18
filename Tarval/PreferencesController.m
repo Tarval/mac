@@ -81,12 +81,30 @@
     
     for(NSTextField *field in pinFields) {
         [pin appendString:field.stringValue];
+        [field setEnabled: NO];
     }
     
     NSDictionary *send = @{
         @"pin": [NSNumber numberWithInt:(int)pin.integerValue]
     };
     [websocketMC sendEvent:@"bindPin" data:send];
+    
+    [repairButton setEnabled: YES];
+}
+
+- (IBAction)clickRepair: (id)sender
+{
+    // Reset the UI
+    for(NSTextField *field in pinFields) {
+        field.stringValue = @"";
+        [field setEnabled: YES];
+    }
+    [repairButton setEnabled: NO];
+    [checkImage setHidden: YES];
+    [loadingIndicator setHidden: YES];
+    
+    [pinFields[0] becomeFirstResponder];
+    [websocketMC sendEvent:@"unbindPin" data: nil];
 }
 
 # pragma mark Websocket events

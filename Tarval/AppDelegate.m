@@ -34,6 +34,8 @@
     self.statusItem.target = self;
     [self.statusItem setAction:@selector(clickStatusBar:)];
     
+    self.window.delegate = self;
+    
     // Set up listeners for keypresses
     NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
     [notificationCenter addObserver:self
@@ -44,6 +46,13 @@
       selector:@selector(wsKeyUp:)
       name:@"ws:keyUp"
       object:nil];
+}
+
+# pragma mark NSWindowDelegate
+- (BOOL)windowShouldClose:(id)sender
+{
+    self.window.isVisible = NO;
+    return NO;
 }
 
 # pragma mark Status bar

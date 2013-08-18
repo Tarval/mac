@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "WebsocketMC.h"
 
-@interface AppDelegate : NSObject <NSApplicationDelegate>
+@interface AppDelegate : NSObject <NSApplicationDelegate, NSWindowDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
 @property (strong, nonatomic) WebsocketMC *websocket;

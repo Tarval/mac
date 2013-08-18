@@ -12,6 +12,7 @@
 @implementation AppDelegate
 
 @synthesize websocket;
+@synthesize statusItem;
 
 - (id) init
 {
@@ -27,6 +28,16 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+    // Add the status bar item
+    self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
+    self.statusItem.title = @"T";
+    self.statusItem.target = self;
+    [self.statusItem setAction:@selector(clickStatusBar:)];
+}
+
+- (void)clickStatusBar:(id)sender
+{
+    self.window.isVisible = !self.window.isVisible;
 }
 
 @end

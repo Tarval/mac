@@ -13,5 +13,8 @@
 
 @property (assign) IBOutlet NSWindow *window;
 @property (strong, nonatomic) WebsocketMC *websocket;
+@property (strong, nonatomic) NSStatusItem *statusItem;
+
+- (void)clickStatusBar: (id)sender;
 
 @end

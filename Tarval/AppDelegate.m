@@ -32,8 +32,8 @@
     self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     self.statusItem.target = self;
     [self.statusItem setAction:@selector(clickStatusBar:)];
-    
     [self.statusItem setImage:[NSImage imageNamed:@"controller_inactive"]];
+    [self.statusItem setHighlightMode:YES];
     
     self.window.delegate = self;
     

@@ -71,7 +71,13 @@
 - (IBAction)clickPreferences:(id)sender
 {
     if(self.window.isVisible) {
-        self.window.isVisible = NO;
+        if(![self.window isMainWindow]) {
+            [self.window makeKeyAndOrderFront:sender];
+            [self.window setOrderedIndex:0];
+            [NSApp activateIgnoringOtherApps:YES];
+        } else {
+            self.window.isVisible = NO;
+        }
     } else {
         // TODO: Is all of this really needed?
         [self.window makeKeyAndOrderFront:sender];

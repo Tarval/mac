@@ -17,4 +17,10 @@
 
 - (void)clickStatusBar: (id)sender;
 
+- (void)simulateKey:(NSInteger)key withPressValue:(BOOL)val;
+- (NSInteger)translateKey: (NSNumber *)key;
+
+- (void)wsKeyDown: (NSNotification*)notification;
+- (void)wsKeyUp: (NSNotification*)notification;
+
 @end

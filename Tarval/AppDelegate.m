@@ -33,6 +33,7 @@
     self.statusItem.image = [NSImage imageNamed:@"controller_inactive"];
     self.statusItem.menu = menu;
     self.statusItem.highlightMode = YES;
+    statusMenuItem.title = @"Status: Not connected";
     
     self.window.delegate = self;
     
@@ -143,12 +144,14 @@
 - (void)wsPhoneReady:(NSNotification *)notification
 {
     NSLog(@"Phone ready");
+    statusMenuItem.title = @"Status: Connected";
     [self.statusItem setImage:[NSImage imageNamed:@"controller_active"]];
 }
 
 - (void)wsPhoneClose:(NSNotification *)notification
 {
     NSLog(@"Phone closed");
+    statusMenuItem.title = @"Status: Not connected";
     [self.statusItem setImage:[NSImage imageNamed:@"controller_inactive"]];
 }
 @end

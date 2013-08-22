@@ -97,16 +97,22 @@
 - (NSInteger)translateKey:(NSNumber *)key
 {
     switch([key integerValue]) {
+        // Return key
         case 13:
             return 0x24;
+        // Left arrow
         case 37:
             return 0x7B;
+        // Up arrow
         case 38:
             return 0x7E;
+        // Right arrow
         case 39:
             return 0x7C;
+        // Down arrow
         case 40:
             return 0x7D;
+        // Space
         case 83:
             return 0x31;
     }
@@ -130,7 +136,7 @@
     NSNumber *key = notification.object[@"v"];
     NSInteger real = [self translateKey:key];
     
-    [self simulateKey:real withPressValue:NO];
+    [self simulateKey:real withPressValue:YES];
 }
 
 - (void)wsKeyUp:(NSNotification *)notification
@@ -138,7 +144,7 @@
     NSNumber *key = notification.object[@"v"];
     NSInteger real = [self translateKey:key];
     
-    [self simulateKey:real withPressValue:YES];
+    [self simulateKey:real withPressValue:NO];
 }
 
 - (void)wsPhoneReady:(NSNotification *)notification
